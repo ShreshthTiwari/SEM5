@@ -8,12 +8,12 @@ ofstream g("data.out");
 
 int main()
 {
-    int a, b, sum;
+  int a, b, sum;
 
-    f>>a>>b;
-    sum = a+b;
+  f>>a>>b;
+  sum = a+b;
 
-    g<<sum;
+  g<<sum;
 
-    return 0;
+  return 0;
 }
