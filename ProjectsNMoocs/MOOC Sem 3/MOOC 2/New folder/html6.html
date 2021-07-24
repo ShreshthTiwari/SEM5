@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+  function displayInput()
+  {
+    var testInput = document.getElementById("name").value;
+	if(testInput.length == 0)
+	{
+	  document.getElementById("para").innerHTML = "hey there you haven't type anything.";
+	}
+	else 
+	  document.getElementById("para").innerHTML = testInput;
+  }
+</script>  
+<head>
+<title>Buttons</title>
+</head>
+<body>
+<H1 style="color:yellow;">Let's see a button</H1>
+<input id="name" type="text"/>
+<button onclick="displayInput();">Color It</button>
+<p id="para" style="color:blue;"></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Onblue Event Page</title>
+<script>
+  function checkField1(){
+    var field = document.getElementById("field1").value;
+	if(field.length < 5)
+	  document.getElementById("message1").innerHTML = "Too short.";
+	else
+       document.getElementById("message1").innerHTML = "That's long enough.";
+  }
+  function checkField2(){
+    var field = document.getElementById("field2").value;
+	if(field != "")
+	  document.getElementById("message1").innerHTML = "Input accepted.";
+	else
+       document.getElementById("message1").innerHTML = "You must provide an input!";
+  }  
+</script>  
+</head>
+<body>
+<p> JavaScript onblur eventds Tests. </p>
+<input id="field1"  type="text" onblur="checkField1();"/><span id="message1"></span>
+<input id="field2"  type="text" onblur="checkField2();"/><span id="message1"></span>
+<input id="field3"  type="text"/><span id="message1"></span>
+</body>
+</html>
