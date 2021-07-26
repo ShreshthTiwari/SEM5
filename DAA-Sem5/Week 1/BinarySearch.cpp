@@ -11,11 +11,11 @@ void readArray(int *arr, int n){
   }
 }
 
-int findElement(int arr[], int n, int element, int *steps){
+int findElement(int arr[], int n, int element, int *steps, int first, int last){
   int i;
   int found = 0;
 
-  for(i=0; i<=n-1; i++){
+  for(i=first; i<=last-1; i++){
     *steps += 1;
 
     if(element == arr[i]){
@@ -28,13 +28,14 @@ int findElement(int arr[], int n, int element, int *steps){
 }
 
 int main(){
-  int loop;
-  int steps, found;
-  int i, n;
+  int i;
+  int steps, found, loop;
   int *arr = (int *) malloc(sizeof(int));
+  int n;
+  int mid, first, last;
   int element;
 
-  scanf("%d", &loop);
+  cin>>loop;
 
   for(i=0; i<=loop-1; i++){
     steps = found = 0;
@@ -45,9 +46,23 @@ int main(){
 
     readArray(arr, n);
 
+    if(n %2 == 0){
+      mid /= 2;
+    }else{
+      mid = (mid+1)/2;
+    }
+
     cin>>element;
 
-    found = findElement(arr, n, element, &steps);
+    if(element < arr[mid]){
+      first = 0;
+      last = mid;
+    }else{
+      first = mid;
+      last = n;
+    }
+
+    found = findElement(arr, n, element, &steps, first, last);
 
     if(found == 1){
       cout<<"Present "<<steps<<'\n';
