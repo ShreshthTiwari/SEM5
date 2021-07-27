@@ -11,8 +11,20 @@ void readArray(int *arr, int n){
   }
 }
 
+int countElement(int arr[], int first, int last, int element){
+  int i;
+  int elementCount = 0;
+  for(i=first; i<=last-1; i++){
+    if(element == arr[i]){
+      elementCount++;
+    }
+  }
+
+  return elementCount;
+}
+
 int findElement(int arr[], int n, int element){
-  int i, countElement = 0;
+  int i, elementCount;
   int first, mid, last;
 
   if(n %2 == 0){
@@ -21,33 +33,32 @@ int findElement(int arr[], int n, int element){
     mid = (n+1)/2;
   }
 
-  if(element < mid){
+  if(element <= arr[mid]){
     first = 0;
     last = mid;
-  }else{
+
+    elementCount += countElement(arr, first, last, element);
+  }
+  if(element >= arr[mid]){
     first = mid;
     last = n;
+
+    elementCount += countElement(arr, first, last, element);
   }
 
-  for(i=first; i<=last-1; i++){
-    if(element == arr[i]){
-      countElement++;
-    }
-  }
-
-  return countElement;
+  return elementCount;
 }
 
 int main(){
   int loop;
   int i;
-  int n, countElement;
+  int n, elementCount;
   int element;
 
   cin>>loop;
 
   for(i=0; i<=loop-1; i++){
-    countElement = 0;
+    elementCount = 0;
 
     cin>>n;
 
@@ -57,10 +68,10 @@ int main(){
 
     cin>>element;
 
-    countElement = findElement(arr, n, element);
+    elementCount = findElement(arr, n, element);
 
-    if(countElement > 0){
-      cout<<element<<" - "<<countElement<<'\n';
+    if(elementCount > 0){
+      cout<<element<<" - "<<elementCount<<'\n';
     }else{
       cout<<"Key not present";
     }

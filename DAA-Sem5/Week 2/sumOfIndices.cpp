@@ -20,19 +20,14 @@ void findIndicies(int arr[], int n){
       for(k=j+1; k<=n-1; k++){
         if((arr[i] + arr[j]) == arr[k]){
           flag = true;
-          goto out;
+          cout<<i+1<<','<<j+1<<','<<k+1<<'\n';
+          return;
         }
       }
     }
   }
 
-  out:
-
-  if(flag){
-    cout<<i+1<<','<<j+1<<','<<k+1<<'\n';
-  }else{
-    cout<<"No sequence fund\n";
-  }
+  cout<<"No sequence fund\n";
 }
 
 int main(){
