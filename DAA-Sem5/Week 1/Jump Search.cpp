@@ -39,7 +39,6 @@ int main(){
   int loop;
   int i;
   int found, steps;
-  int *arr = (int *) malloc(sizeof(int));
   int element, n;
 
   cin>>loop;
@@ -49,7 +48,7 @@ int main(){
 
     cin>>n;
 
-    arr = (int *) realloc(arr, n);
+    int arr[n];
 
     readArray(arr, n);
 
