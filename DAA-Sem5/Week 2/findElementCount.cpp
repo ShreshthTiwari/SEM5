@@ -1,3 +1,4 @@
+//27-07-2021
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -12,8 +13,23 @@ void readArray(int *arr, int n){
 
 int findElement(int arr[], int n, int element){
   int i, countElement = 0;
+  int first, mid, last;
 
-  for(i=0; i<=n-1; i++){
+  if(n %2 == 0){
+    mid = n/2;
+  }else{
+    mid = (n+1)/2;
+  }
+
+  if(element < mid){
+    first = 0;
+    last = mid;
+  }else{
+    first = mid;
+    last = n;
+  }
+
+  for(i=first; i<=last-1; i++){
     if(element == arr[i]){
       countElement++;
     }
