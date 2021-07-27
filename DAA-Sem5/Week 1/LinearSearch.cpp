@@ -11,15 +11,15 @@ void readArray(int *arr, int n){
   }
 }
 
-int findElement(int arr[], int n, int element, int *steps){
+bool findElement(int arr[], int n, int element, int *steps){
   int i;
-  int found = 0;
+  bool found = false;
 
   for(i=0; i<=n-1; i++){
     *steps += 1;
 
     if(element == arr[i]){
-      found = 1;
+      found = true;
       break;
     }
   }
@@ -29,7 +29,8 @@ int findElement(int arr[], int n, int element, int *steps){
 
 int main(){
   int loop;
-  int steps, found;
+  int steps;
+  bool found = false;
   int i, n;
   int *arr = (int *) malloc(sizeof(int));
   int element;
@@ -37,7 +38,8 @@ int main(){
   scanf("%d", &loop);
 
   for(i=0; i<=loop-1; i++){
-    steps = found = 0;
+    steps = 0;
+    found = false;
 
     cin>>n;
 
@@ -49,7 +51,7 @@ int main(){
 
     found = findElement(arr, n, element, &steps);
 
-    if(found == 1){
+    if(found){
       cout<<"Present "<<steps<<'\n';
     }else{
       cout<<"Not Present "<<steps<<'\n';
