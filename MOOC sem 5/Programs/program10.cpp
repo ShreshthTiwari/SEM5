@@ -21,9 +21,9 @@ int main(){
   elementCount = count(arr, arr+n, element);
 
   if(elementCount > 0){
-    g<<"Element is present "<<elementCount<<" times.";
+    g<<"Element ("<<element<<") is present "<<elementCount<<" times.";
   }else{
-    g<<"Element not present.";
+    g<<"Element ("<<element<<") is not present.";
   }
 
   return 0;
