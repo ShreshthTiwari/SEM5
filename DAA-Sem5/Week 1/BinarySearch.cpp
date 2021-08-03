@@ -18,7 +18,6 @@ bool findElement(int arr[], int element, int *steps, int first, int last){
 
   for(i=first; i<=last-1; i++){
     *steps += 1;
-    cout<<*steps<<' '<<arr[i]<<'\n';
 
     if(element == arr[i]){
       found = true;
