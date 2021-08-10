@@ -32,7 +32,6 @@ int main(){
   int steps;
   bool found = false;
   int i, n;
-  int *arr = (int *) malloc(sizeof(int));
   int element;
 
   scanf("%d", &loop);
@@ -43,7 +42,7 @@ int main(){
 
     cin>>n;
 
-    arr = (int *) realloc(arr, n);
+    int arr[n];
 
     readArray(arr, n);
 
