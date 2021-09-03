@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void readArray(int *arr, int n){
+void ReadArray(int *arr, int n){
   int i;
 
   for(i=0; i<=n-1; i++){
@@ -40,7 +40,7 @@ int main(){
 
   int arr[n];
 
-  readArray(arr, n);
+  ReadArray(arr, n);
 
   for(i=0; i<=m-1; i++){
     cin>>element;
