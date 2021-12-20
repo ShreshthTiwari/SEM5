@@ -49,9 +49,9 @@ int main(){
     readArray(arr, n);
 
     if(n %2 == 0){
-      mid /= 2;
+      mid = n/2;
     }else{
-      mid = (mid+1)/2;
+      mid = (n+1)/2;
     }
 
     cin>>element;
